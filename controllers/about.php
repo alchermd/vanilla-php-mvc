@@ -1,6 +1,7 @@
 <?php
 
-// Fetch any necessary data.
+// Set page title.
+$title = 'About';
 
 // Load up a view.
 require 'views/about.php';
