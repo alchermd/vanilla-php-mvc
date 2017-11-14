@@ -1,7 +1,8 @@
 <?php
 
-function view(string $viewName, $context)
+function view(string $viewName, $context=[])
 {
     extract($context);
-    require "views/{$viewName}.php";
+    $filePath = str_replace('.', '/', $viewName);
+    require "views/{$filePath}.php";
 }
