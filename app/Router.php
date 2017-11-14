@@ -3,20 +3,33 @@
 // A class responsible for mapping requests to its controller.
 class Router
 {
-    protected $routes = [];
+    protected $routes = [
+        'GET' => [],
+        'POST' => [],
+    ];
 
-    public static function load(array $routes)
+    public static function load(string $file)
     {
         $router = new static();
-        $router->routes = $routes;
+        require $file;
 
         return $router;
     }
 
-    public function direct(string $uri)
+    public function get($uri, $controller)
     {
-        if (array_key_exists($uri, $this->routes)) {
-            return $this->routes[$uri];
+        $this->routes['GET'][$uri] = $controller;
+    }
+
+    public function post($uri, $controller)
+    {
+        $this->routes['POST'][$uri] = $controller;
+    }
+
+    public function direct(string $uri, string $method)
+    {
+        if (array_key_exists($uri, $this->routes[$method])) {
+            return $this->routes[$method][$uri];
         }
 
         return 'views/404.php';
