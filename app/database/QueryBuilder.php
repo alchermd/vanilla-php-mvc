@@ -21,4 +21,10 @@ class QueryBuilder
 
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+
+    public function save(string $table, string $values, $obj)
+    {
+        $query = $this->db->prepare("INSERT INTO {$table}({$values}) values(\"{$obj}\")");
+        $query->execute();
+    }
 }
