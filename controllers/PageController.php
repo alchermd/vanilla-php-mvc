@@ -11,7 +11,7 @@ class PageController
         $title = 'Home';
 
         // Load up the view.
-        require 'views/index.php';
+        return view('index', compact('tasks', 'title'));
     }
 
     public function about()
@@ -20,7 +20,7 @@ class PageController
         $title = 'About';
 
         // Load up the view.
-        require 'views/about.php';
+        return view('about', compact('title'));
     }
 
     public function contact()
@@ -29,6 +29,6 @@ class PageController
         $title = 'Contact';
 
         // Load up the view.
-        require 'views/contact.php';
+        return view('contact', compact('title'));
     }
 }

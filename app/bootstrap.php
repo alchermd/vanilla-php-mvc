@@ -1,6 +1,7 @@
 <?php
 
 require 'vendor/autoload.php';
+require 'helpers/view.php';
 
 App::bind('config', require 'config.php');
 
