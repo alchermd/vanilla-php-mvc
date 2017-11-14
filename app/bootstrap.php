@@ -2,6 +2,7 @@
 
 require 'vendor/autoload.php';
 require 'helpers/view.php';
+require 'helpers/redirect.php';
 
 App::bind('config', require 'config.php');
 

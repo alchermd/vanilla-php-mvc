@@ -20,7 +20,7 @@ class TaskController
             require "views/500.php";
         }
 
-        // Redirect to home.
-        header('Location: /tasks');
+        // Redirect to tasks.
+        return redirect('tasks');
     }
 }
