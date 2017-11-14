@@ -2,6 +2,14 @@
 
 class TaskController
 {
+    public static function index()
+    {
+        $tasks = App::get('db')->selectAll('tasks', Task::class);
+        $title = 'Tasks';
+
+        return view('tasks.index', compact('tasks', 'title'));
+    }
+
     public static function store()
     {  
         // Save the task.
@@ -13,6 +21,6 @@ class TaskController
         }
 
         // Redirect to home.
-        header('Location: /');
+        header('Location: /tasks');
     }
 }
