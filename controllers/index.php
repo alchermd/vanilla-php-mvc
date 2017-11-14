@@ -1,7 +1,7 @@
 <?php
 
 // Fetch all the tasks.
-$tasks = $app['db']->selectAll('tasks', Task::class);
+$tasks = App::get('db')->selectAll('tasks', Task::class);
 
 // Set a page title.
 $title = 'Home';
