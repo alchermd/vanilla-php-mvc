@@ -22,9 +22,15 @@ class QueryBuilder
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function save(string $table, string $values, $obj)
+    public function insert(string $table, array $parameters)
     {
-        $query = $this->db->prepare("INSERT INTO {$table}({$values}) values(\"{$obj}\")");
-        $query->execute();
+        $sql = sprintf(
+                "INSERT INTO %s (%s) VALUES (%s)",
+                $table,
+                implode(', ', array_keys($parameters)),
+                ':' . implode(', :', array_keys($parameters))
+        );  
+        $query = $this->db->prepare($sql);
+        $query->execute($parameters);
     }
 }
