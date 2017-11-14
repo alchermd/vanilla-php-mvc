@@ -1,5 +1,4 @@
 <?php require 'views/layouts/top.php' ?>
-
 <header>
     <h1>Tasks</h1>
     <ul>
