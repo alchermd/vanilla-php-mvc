@@ -1,6 +1,6 @@
 <?php
 
-$router->get('', 'controllers/index.php');
-$router->get('about', 'controllers/about.php');
-$router->get('contact', 'controllers/contact.php');
-$router->post('tasks', 'controllers/addTask.php');
+$router->get('', 'PageController@index');
+$router->get('about', 'PageController@about');
+$router->get('contact', 'PageController@contact');
+$router->post('tasks', 'TaskController@store');
