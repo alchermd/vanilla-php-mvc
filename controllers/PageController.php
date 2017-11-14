@@ -4,7 +4,8 @@ class PageController
 {
     public function index()
     {
-        return view('pages.index');
+        $title = 'Home';
+        return view('pages.index', compact('title'));
     }
 
     public function about()
