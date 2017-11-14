@@ -1,5 +1,7 @@
 <?php
 
+namespace App\App;
+
 // A class responsible for accessing request-related data.
 class Request
 {

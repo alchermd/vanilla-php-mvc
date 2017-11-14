@@ -1,5 +1,9 @@
 <?php
 
+use App\App\App;
+use App\App\Database\{QueryBuilder, Connection};
+
+
 require 'vendor/autoload.php';
 require 'helpers/view.php';
 require 'helpers/redirect.php';
