@@ -1,8 +1,12 @@
 <?php
 
 // Save the task.
-$app['db']->save('tasks', 'description', $_POST['description']);
-
+try {
+    $app['db']->insert('tasks', ['description' => $_POST['description']]);
+}
+catch (Exception $e) {
+    require "views/500.php";
+}
 // Set page data.
 $title = "Success!";
 $message = "Task added.";
