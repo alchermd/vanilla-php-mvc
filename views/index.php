@@ -11,4 +11,12 @@
     </ul>
 </header>
 
+<section>
+    <h1>Add new Task</h1>
+    <form action="/tasks" method="post">
+        <textarea name="description" cols="30" rows="10"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</section>
+
 <?php require 'views/layouts/bottom.php' ?>
