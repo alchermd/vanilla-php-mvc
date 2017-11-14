@@ -7,9 +7,6 @@ try {
 catch (Exception $e) {
     require "views/500.php";
 }
-// Set page data.
-$title = "Success!";
-$message = "Task added.";
 
-// Load up a view
-require "views/addTask.php";
+// Redirect to home.
+header('Location: /');
